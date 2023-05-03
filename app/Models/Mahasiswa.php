@@ -16,4 +16,9 @@ class Mahasiswa extends Model //Definisi Model
      * @var array
      */
     protected $fillable = ['Nim', 'Nama', 'Tanggal_Lahir', 'Kelas', 'Jurusan', 'Email', 'No_Handphone'];
+
+    public function kelas()
+    {
+        return $this->belongsTo(Kelas::class);
+    }
 }
