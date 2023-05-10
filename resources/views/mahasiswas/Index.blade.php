@@ -26,6 +26,11 @@
         </div>
     @endif
     <script>
+        $(document).ready(function () {
+    $('#table').DataTable();
+});
+    </script>
+    <script>
         $(document).ready(function() {
             $('#table').DataTable();
         });
@@ -35,13 +40,14 @@
 
             <tr>
                 <th>Nim</th>
-                <th style="width:15%">Nama</th>
-                <th style="width:15%">TTL</th>
+                <th style="width:10%">Nama</th>
+                <th>Foto</th>
+                <th style="width:10%">TTL</th>
                 <th>Kelas</th>
-                <th style="width:20%">Jurusan</th>
+                <th style="width:10%">Jurusan</th>
                 <th>No_Handphone</th>
                 <th>Email</th>
-                <th style="width:40%">Action</th>
+                <th style="width: 100%">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -50,6 +56,7 @@
                 <tr>
                     <td>{{ $Mahasiswa->Nim }}</td>
                     <td>{{ $Mahasiswa->Nama }}</td>
+                    <td><img width="100px" src="{{asset('storage/'.$Mahasiswa->Foto)}}"></td>
                     <td>{{ $Mahasiswa->Tanggal_Lahir }}</td>
                     <td>{{ $Mahasiswa->Kelas->nama_kelas }}</td>
                     <td>{{ $Mahasiswa->Jurusan }}</td>

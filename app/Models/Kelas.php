@@ -9,10 +9,10 @@ use App\Models\Mahasiswa;
 class Kelas extends Model
 {
     use HasFactory;
-    protected $table='matakuliah';  //mendefinisikan bahwa model ini terkait dengan tabel kelas
+    protected $table='kelas';  //mendefinisikan bahwa model ini terkait dengan tabel kelas
 
-    public function matakuliah()
+    public function mahasiswa()
     {
-        return $this->belongsToMany(Mahasiswa_Matakuliah::class);
+        return $this->hasMany(Mahasiswa::class);
     }
 }
